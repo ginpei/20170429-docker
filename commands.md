@@ -4,7 +4,7 @@
 
 ### `docker-compose up`
 
-Starts containers. `C-c` to stop.
+Starts containers. `C-c` to stop. Since it sometimes fails, you may need to run `docker-compose stop` by yourself.
 
 ### `docker-compose up -d`
 
