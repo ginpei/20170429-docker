@@ -85,3 +85,50 @@ Posts to expose to inside docker network.
 ### `depends_on`
 
 Wait for the other containers.
+
+## Reverse Lookup
+
+### When you modified Dockerfile but container doesn't change
+
+```bash
+$ docker-compose build
+$ docker-compose up
+```
+
+Or
+
+```bash
+$ docker-compose up --build
+```
+
+### Complained something about port
+
+When you see an error message like following;
+
+```
+ERROR: for www  Cannot start service www: driver failed programming external connectivity on endpoint xxx_www_1 (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx): Bind for 0.0.0.0:80 failed: port is already allocated
+ERROR: Encountered errors while bringing up the project.
+```
+
+It means there is a container which is using the port. You needs to stop it before start the new one.
+
+### Stop All Containers
+
+```bash
+$ docker stop `docker ps -q`
+```
+
+### Remove All Containers
+
+```bash
+$ docker stop `docker ps -q`
+$ docker rm `docker ps -qa`
+```
+
+### Remove All Docker Volumes
+
+After removing all containers;
+
+```bash
+$ docker volume prune
+```
