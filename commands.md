@@ -4,6 +4,10 @@ Don't forget to check official documents. :)
 
 ## Docker Compose
 
+### General
+
+You have to run these commands in a directory in which your `docker-compose.yml` is.
+
 ### `docker-compose up`
 
 Starts containers. `C-c` to stop. Since it sometimes fails, you may need to run `docker-compose stop` by yourself.
